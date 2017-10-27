@@ -18,7 +18,18 @@ mainApp.controller('mainController', function ($rootScope, $scope, restService) 
    	restService.getVendor().then(function(data){
    		if(data.data.header.statusCode==200){
    			vm.vendorData=data.data.payload.result;
-   			console.log(vm.vendorData);
+   			//console.log(vm.vendorData);
    		}
    	})
+   	restService.categoryProduct().then(function(data){
+   		//debugger;
+   		if(data.data.header.statusCode==200){
+   			vm.categoryProduct=data.data.payload;
+   			console.log(vm.categoryProduct);
+   		}
+   	})
+   	vm.selectProduct=function(){
+
+   	}
+   
 }) 
